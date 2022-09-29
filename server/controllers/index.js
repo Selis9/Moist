@@ -1,4 +1,4 @@
-const { findPlants, createPlants, updatePlants, updateAllPlants, removePlants } = require('../models');
+const { findPlants, createPlants, updatePlants, updateAllPlants, removePlants, pullWeather, addWeather } = require('../models');
 
 const getPlants = async (req, res) => {
   try {
@@ -53,6 +53,26 @@ const putPlants = async (req, res) => {
   }
 }
 
+const getWeather = async (req, res) => {
+  try {
+    let result = await pullWeather();
+    console.log('weather get here', result)
+    res.send(result)
+  } catch {
+    res.sendStatus(404);
+  }
+}
+
+const postWeather = async (req, res) => {
+  try {
+    console.log('weather post here', req.body.weather)
+    await addWeather(JSON.stringify(req.body.weather))
+    res.sendStatus(204)
+  } catch {
+    res.sendStatus(404);
+  }
+}
+
 const deletePlants = async (req, res) => {
   try {
     await removePlants(req.body.id);
@@ -66,3 +86,5 @@ module.exports.getPlants = getPlants;
 module.exports.postPlants = postPlants;
 module.exports.putPlants = putPlants;
 module.exports.deletePlants = deletePlants;
+module.exports.getWeather = getWeather;
+module.exports.postWeather = postWeather;

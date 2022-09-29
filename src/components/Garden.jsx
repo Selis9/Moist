@@ -1,6 +1,5 @@
 import React from 'react';
 import PlantCard from './PlantCard.jsx';
-import Seed from './Seed.jsx';
 import tools from '../images/tools.png'
 
 const Garden = ({plants}) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ weather, weatherPull }) => {
   return (
     <div className='header'>
-      <h1>Moist</h1>
+      <div><h1>Moist</h1></div>
     </div>
   );
 }

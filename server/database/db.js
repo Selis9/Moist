@@ -15,8 +15,15 @@ const plantsSchema = new mongoose.Schema({
   imageURL: String,
 })
 
+const weatherSchema = new mongoose.Schema({
+  weatherData: String,
+  pullDate: Date,
+})
+
 const Plants = mongoose.model('plants', plantsSchema);
+const Weather = mongoose.model('weather', weatherSchema);
 
 module.exports.Plants = Plants;
+module.exports.Weather = Weather;
 
 

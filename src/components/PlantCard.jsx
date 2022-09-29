@@ -73,9 +73,9 @@ const PlantCard = ({plantInfo}) => {
         </div>
       </div>
       <div className="actionbuttons">
-        <div><img className='actionbtn' src={wateringbtn} alt="watering icon" /></div>
-        <div><img className='actionbtn' src={fertilizerbtn} alt="fertilizer icon" /></div>
-        <div><img className='actionbtn' src={compostbtn} alt="composting icon" /></div>
+        <div><img className='wateractionbtn' title='Click to water this plant' src={wateringbtn} alt="watering icon" /></div>
+        <div><img className='fertactionbtn' title='Click to fertilize this plant' src={fertilizerbtn} alt="fertilizer icon" /></div>
+        <div><img className='compostactionbtn' title='Click to remove this plant' src={compostbtn} alt="composting icon" /></div>
       </div>
     </div>
   );

@@ -15,12 +15,20 @@ const Parse = {
     return axios.put(`${url}${endpoint}`, data)
   },
 
-  remove: (endpoint, params = '') => {
-    return axios.delete(`${url}${endpoint}${params}`)
+  remove: (endpoint, data) => {
+    return axios.delete(`${url}${endpoint}`, data)
+  },
+
+  getAPIWeather: () => {
+    return axios.get(`https://api.weather.gov/gridpoints/SGX/37,61/forecast`)
   },
 
   getWeather: () => {
-    return axios.get(`https://api.weather.gov/gridpoints/SGX/37,61/forecast`)
+    return axios.get(`${url}/weather`);
+  },
+
+  saveWeather: (data) => {
+    return axios.post(`${url}/weather`, data);
   }
 }
 
