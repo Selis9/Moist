@@ -16,7 +16,7 @@ const Parse = {
   },
 
   remove: (endpoint, data) => {
-    return axios.delete(`${url}${endpoint}`, data)
+    return axios.delete(`${url}${endpoint}/${data}`)
   },
 
   getAPIWeather: () => {

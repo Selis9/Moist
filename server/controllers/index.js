@@ -31,7 +31,7 @@ const postPlants = async (req, res) => {
 
 const putPlants = async (req, res) => {
   try {
-    if (req.body._id === undefined) {
+    if (req.body.id === undefined) {
       if (req.body.watered !== undefined) {
         await updateAllPlants({lastWatered: req.body.watered});
         res.sendStatus(204);
@@ -41,10 +41,10 @@ const putPlants = async (req, res) => {
       }
     } else {
       if (req.body.watered !== undefined) {
-        await updatePlants({lastWatered: req.body.watered});
+        await updatePlants({_id: req.body.id}, {lastWatered: req.body.watered});
         res.sendStatus(204);
       } else {
-        await updatePlants({lastFertilized: req.body.fertilized});
+        await updatePlants({_id: req.body.id}, {lastFertilized: req.body.fertilized});
         res.sendStatus(204);
       }
     }
@@ -56,7 +56,6 @@ const putPlants = async (req, res) => {
 const getWeather = async (req, res) => {
   try {
     let result = await pullWeather();
-    console.log('weather get here', result)
     res.send(result)
   } catch {
     res.sendStatus(404);
@@ -65,7 +64,6 @@ const getWeather = async (req, res) => {
 
 const postWeather = async (req, res) => {
   try {
-    console.log('weather post here', req.body.weather)
     await addWeather(JSON.stringify(req.body.weather))
     res.sendStatus(204)
   } catch {
@@ -75,7 +73,7 @@ const postWeather = async (req, res) => {
 
 const deletePlants = async (req, res) => {
   try {
-    await removePlants(req.body.id);
+    await removePlants(req.params.id);
     res.sendStatus(204);
   } catch {
     res.sendStatus(404);

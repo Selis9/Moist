@@ -13,8 +13,20 @@ import fertilizerbtn from '../images/fertilizerbtn.png';
 import wateringbtn from '../images/wateringbtn.png';
 const moment = require('moment');
 
-const PlantCard = ({plantInfo}) => {
+const PlantCard = ({ plantInfo, w, f, r}) => {
   const [plantImage, setPlantImage] = useState(groundplant);
+
+  const waterCard = () => {
+    w(plantInfo._id);
+  }
+
+  const fertCard = () => {
+    f(plantInfo._id);
+  }
+
+  const removeCard = () => {
+    r(plantInfo._id);
+  }
 
   useEffect(() => {
     if (plantInfo.plant.toLowerCase().includes('carrot')) {
@@ -73,9 +85,9 @@ const PlantCard = ({plantInfo}) => {
         </div>
       </div>
       <div className="actionbuttons">
-        <div><img className='wateractionbtn' title='Click to water this plant' src={wateringbtn} alt="watering icon" /></div>
-        <div><img className='fertactionbtn' title='Click to fertilize this plant' src={fertilizerbtn} alt="fertilizer icon" /></div>
-        <div><img className='compostactionbtn' title='Click to remove this plant' src={compostbtn} alt="composting icon" /></div>
+        <div><img className='wateractionbtn' onClick={waterCard} title='Click to water this plant' src={wateringbtn} alt="watering icon" /></div>
+        <div><img className='fertactionbtn' onClick={fertCard} title='Click to fertilize this plant' src={fertilizerbtn} alt="fertilizer icon" /></div>
+        <div><img className='compostactionbtn' onClick={removeCard} title='Click to remove this plant' src={compostbtn} alt="composting icon" /></div>
       </div>
     </div>
   );

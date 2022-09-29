@@ -4,8 +4,8 @@
 }
 
 body {
-  margin: auto;;
-  width: 70%
+  margin: auto;
+  width: 72%;
 }
 
 .header {
@@ -22,8 +22,27 @@ body {
 }
 
 .weather {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 150px;
+  height: 120px;
+}
+
+.weather img {
   height: 90px;
   width: 90px;
+}
+
+.weatherdetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .moon {
@@ -99,23 +118,23 @@ button:hover {
 .PlantImg {
   height: 100px;
   width: 100px;
-  padding: 50px 125px 50px 125px;
+  padding: 50px 123px 50px 123px;
   border-bottom: 1px solid black;
   background-color: white;
   border-radius: 3px;
 }
 
 .plantDesc {
-  margin: 10px;
-  width: 100%;
+  padding-left: 10px;
+  width: 330px;
   color: black;
-
+  padding-top: 10px;
 }
 
 .plantDesc div {
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 footer {
@@ -137,38 +156,53 @@ footer {
 }
 
 .navigation {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  justify-items: center;
-  justify-content: space-evenly;
+  width: 100%;
   margin-bottom: 30px;
   border-bottom: 1px solid black;
+  height: auto;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px 20px;
+  justify-items: center;
+  justify-content: space-evenly;
 }
 
 .navbuttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 125px 50px 125px;
+  padding: 50px 120px 50px 120px;
 }
 
 .navbuttons:hover {
   cursor: pointer;
-  background-color: #f1f1f1;
+  padding: 50px 120px 50px 120px;
 }
 
 .addSeeds {
   width: 100px;
   height: 100px;
-  /* background-color:mediumaquamarine; */
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.addSeeds:hover, .waterPlants:hover, .editGarden:hover, .fertPlants:hover, .compost:hover {
+#addnav {
+  background-color: rgba(211, 242, 222, .4);
+}
 
+#waternav {
+  background-color:rgba(204,232,253, .4)
+}
+
+#fertnav {
+  background-color: rgba(254,202,29, .2)
+}
+
+#compostnav {
+  background-color: rgba(255, 99, 71, .2);
 }
 
 .addSeeds img {
@@ -184,21 +218,7 @@ footer {
 .waterPlants {
   width: 100px;
   height: 100px;
-  /* background-color:cornflowerblue; */
   border-radius: 60px;
-  /* border: 3px solid black; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.editGarden {
-  width: 100px;
-  height: 100px;
-  background-color:darksalmon;
-  border-radius: 60px;
-  border: 3px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,9 +228,6 @@ footer {
 .fertPlants {
   width: 100px;
   height: 100px;
-  /* background-color:wheat; */
-  /* border-radius: 60px;
-  border: 3px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,9 +237,6 @@ footer {
 .compost {
   width: 100px;
   height: 100px;
-  /* background-color:tomato; */
-  /* border-radius: 60px;
-  border: 3px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,25 +244,25 @@ footer {
 }
 
 .wateractionbtn, .fertactionbtn, .compostactionbtn {
-  height: 50px;
-  width: 50px;
-  padding: 11px 31px 11px 31px;
+  height: 52px;
+  width: 52px;
+  padding: 15px 31px 15px 31px;
   border-top: 1px black dashed;
 }
 
 .wateractionbtn:hover {
   cursor: pointer;
-  background-color:#f1f1f1;
+  background-color:rgba(204,232,253, .4)
 }
 
 .fertactionbtn:hover {
   cursor: pointer;
-  background-color: #f1f1f1;
+  background-color: rgba(254,202,29, .2)
 }
 
 .compostactionbtn:hover {
   cursor: pointer;
-  background-color: #f1f1f1;
+  background-color: rgba(255, 99, 71, .2);
 }
 
 .actionbtn div {

@@ -8,7 +8,7 @@ const updatePlants = (plantId, data) => Plants.findByIdAndUpdate(plantId, data);
 
 const updateAllPlants = (data) => Plants.updateMany({}, data);
 
-const removePlants = (plantId) => Plants.findOneAndDelete({_id: plantId});
+const removePlants = (plantId) => Plants.findByIdAndDelete(plantId);
 
 const pullWeather = () => Weather.find();
 
