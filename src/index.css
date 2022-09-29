@@ -1,0 +1,212 @@
+* {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: white;
+}
+
+.garden {
+  height: auto;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px 20px;
+  padding-top: 20px;
+  justify-items: center;
+  width: 60%
+}
+
+.plantCard {
+  width: 300px;
+  height: 500px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+
+  color: black;
+}
+
+form {
+  background-color: #f7f7f9;
+  border: 3px solid #f1f1f1;
+  width: 500px;
+  height: auto;
+  padding: 15px;
+  font-size: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.exit {
+  background-color: maroon
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.PlantImg {
+  height: 100px;
+  width: 100px;
+  padding: 50px 100px 50px 100px;
+  border-bottom: 1px solid black;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.plantDesc {
+  margin: 10px;
+  width: 250px;
+  color: black;
+}
+
+.plantDesc div {
+  padding: 5px;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  left: 15px;
+}
+
+.noplants {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.noplants div {
+  padding: 10px;
+}
+
+.navigation {
+  position: absolute;
+  right: 10%;
+  top: 50px;
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+}
+
+.navigation div {
+  margin-left: 15px;
+}
+
+.navbuttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addSeeds {
+  width: 100px;
+  height: 100px;
+  background-color:mediumaquamarine;
+  border-radius: 60px;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.addSeeds:hover, .waterPlants:hover, .editGarden:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
+.addSeeds img {
+  width: 100px;
+  height: 100px;
+}
+
+.waterPlants img, .editGarden img {
+  width: 70px;
+  height: 70px;
+}
+
+.waterPlants {
+  width: 100px;
+  height: 100px;
+  background-color:dodgerblue;
+  border-radius: 60px;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.editGarden {
+  width: 100px;
+  height: 100px;
+  background-color:burlywood;
+  border-radius: 60px;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .35);
+  z-index: 2;
+}
+
+.modal-main {
+  position:fixed;
+  background: white;
+  width: auto;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid black;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
