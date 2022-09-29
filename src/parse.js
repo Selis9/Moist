@@ -11,14 +11,17 @@ const Parse = {
     return axios.post(`${url}${endpoint}`, data)
   },
 
-  updatePlants: (endpoint, params = '') => {
-    return axios.put(`${url}${endpoint}${params}`)
+  update: (endpoint, data) => {
+    return axios.put(`${url}${endpoint}`, data)
   },
 
-  removePlants: (endpoint, params = '') => {
+  remove: (endpoint, params = '') => {
     return axios.delete(`${url}${endpoint}${params}`)
   },
 
+  getWeather: () => {
+    return axios.get(`https://api.weather.gov/gridpoints/SGX/37,61/forecast`)
+  }
 }
 
 export default Parse;

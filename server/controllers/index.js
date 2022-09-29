@@ -1,9 +1,8 @@
-const { findPlants, createPlants, updatePlants, removePlants } = require('../models');
+const { findPlants, createPlants, updatePlants, updateAllPlants, removePlants } = require('../models');
 
 const getPlants = async (req, res) => {
   try {
     let result = await findPlants();
-    console.log('result sending back', result)
     res.send(result);
   } catch {
     res.sendStatus(404);
@@ -19,11 +18,10 @@ const postPlants = async (req, res) => {
       location: req.body.location,
       lastWatered: req.body.watered,
       lastWateredTime: req.body.time,
-      lastFertlized: req.body.fertilized,
+      lastFertilized: req.body.fertilized,
       soilType: req.body.soilType,
       addedToGarden: Date.now(),
     }
-    console.log('HERE IN CONTROLLER!')
     await createPlants(params);
     res.sendStatus(204);
   } catch {
@@ -32,14 +30,24 @@ const postPlants = async (req, res) => {
 }
 
 const putPlants = async (req, res) => {
-  let params = {
-    name: req.body.name,
-    lastWatered: req.body.watered,
-    lastFertlized: req.body.fertlized,
-  };
   try {
-    await updatePlants(req.body.id, params);
-    res.sendStatus(204);
+    if (req.body._id === undefined) {
+      if (req.body.watered !== undefined) {
+        await updateAllPlants({lastWatered: req.body.watered});
+        res.sendStatus(204);
+      } else {
+        await updateAllPlants({lastFertilized: req.body.fertilized});
+        res.sendStatus(204);
+      }
+    } else {
+      if (req.body.watered !== undefined) {
+        await updatePlants({lastWatered: req.body.watered});
+        res.sendStatus(204);
+      } else {
+        await updatePlants({lastFertilized: req.body.fertilized});
+        res.sendStatus(204);
+      }
+    }
   } catch {
     res.sendStatus(404);
   }

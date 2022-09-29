@@ -6,11 +6,11 @@ import corn from '../images/corn.png';
 import eggplant from '../images/eggplant.png';
 import lettuce from '../images/lettuce.png';
 import pepper from '../images/pepper.png';
-import potted from '../images/potted.png';
-import pottedplant from '../images/pottedplant.png';
 import tomato from '../images/tomato.png';
 import tree from '../images/tree.png';
-import waterall from '../images/waterall.png';
+import compostbtn from '../images/compostbtn.png';
+import fertilizerbtn from '../images/fertilizerbtn.png';
+import wateringbtn from '../images/wateringbtn.png';
 const moment = require('moment');
 
 const PlantCard = ({plantInfo}) => {
@@ -71,6 +71,11 @@ const PlantCard = ({plantInfo}) => {
             <strong>Soil Type:</strong> {plantInfo.soilType}
           </div>
         </div>
+      </div>
+      <div className="actionbuttons">
+        <div><img className='actionbtn' src={wateringbtn} alt="watering icon" /></div>
+        <div><img className='actionbtn' src={fertilizerbtn} alt="fertilizer icon" /></div>
+        <div><img className='actionbtn' src={compostbtn} alt="composting icon" /></div>
       </div>
     </div>
   );

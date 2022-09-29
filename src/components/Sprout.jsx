@@ -50,7 +50,7 @@ const SproutPlant = ({ addPlant, hide, show }) => {
         <input type="datetime-local" value={waterDate} require='true' onChange={e => setWaterDate(e.target.value)} />
       </label>
       <label>
-        Last Fertilized Date:
+        Last Fertilized:
         <input type="date" value={fertDate} require='true' onChange={e => setFertDate(e.target.value)} />
       </label>
       <label>
@@ -60,10 +60,11 @@ const SproutPlant = ({ addPlant, hide, show }) => {
           <option value="Silt">Silt</option>
           <option value="Sandy">Sandy</option>
           <option value="Loamy">Loamy</option>
+          <option value="Other">Other</option>
         </select>
       </label>
-      <button type="submit" value="Submit">Submit</button>
-      <button className="exit" onClick={hide}>Exit</button>
+        <button type="submit" value="Submit">Submit</button>
+        <button className="exit" onClick={hide}>Exit</button>
     </form>
     </section>
   </div>

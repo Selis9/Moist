@@ -6,10 +6,12 @@ const createPlants = (data) => Plants.create(data);
 
 const updatePlants = (plantId, data) => Plants.findByIdAndUpdate(plantId, data);
 
+const updateAllPlants = (data) => Plants.updateMany({}, data);
+
 const removePlants = (plantId) => Plants.findOneAndDelete({_id: plantId});
 
 module.exports.findPlants = findPlants;
 module.exports.createPlants = createPlants;
 module.exports.updatePlants = updatePlants;
 module.exports.removePlants = removePlants;
-
+module.exports.updateAllPlants = updateAllPlants;

@@ -9,7 +9,7 @@ const plantsSchema = new mongoose.Schema({
   location: String,
   container: String,
   lastWatered: Date,
-  lastFertlized: Date,
+  lastFertilized: Date,
   soilType: String,
   addedToGarden: Date,
   imageURL: String,
